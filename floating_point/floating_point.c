@@ -48,10 +48,7 @@ BitVector* float_to_binary(float f) {
         vect_reverse(&exp_vect);
     }
     exp_vect.length = EXP_PRECISION;
-
-    if (!IS_BIG_ENDIAN) {
-        vect_reverse(&exp_vect);
-    }
+    vect_reverse(&exp_vect); // Reverse again vector is always big-endian
 
     // Create vector holding fraction bits
     BitVector fract_vect;
